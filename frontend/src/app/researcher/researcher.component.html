@@ -1,0 +1,90 @@
+<div class="query-container">
+    <div class="filter">
+        <mat-card>
+            <div class="controls">
+                <div class="header">Filters</div>
+                <div class="regions-container">
+                    <mat-form-field class="form-field">
+                        <mat-label>Location</mat-label>
+                        <mat-select [(value)]="selectedRegion">
+                            <mat-option *ngFor="let region of regions" [value]="region">
+                                {{region}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="analytics-container">
+                    <mat-form-field class="form-field">
+                        <mat-label>Analytics</mat-label>
+                        <mat-select [(value)]="selectedAnalytic">
+                            <mat-option *ngFor="let analytic of analytics" [value]="analytic" (selected)="changeAnalytic()">
+                                {{analytic}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="timestamp-container">
+                    <mat-form-field class="form-field">
+                        <textarea matInput placeholder="From" [(ngModel)]="from"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="timestamp-container">
+                    <mat-form-field class="form-field">
+                        <textarea matInput placeholder="To" [(ngModel)]="to"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="button-container">
+                    <button mat-raised-button class="submit" (click)="fetchData()">Submit</button>
+                </div>
+                <div class="note">
+                    * Use <strong>YYYY-MM-DD<span class="caps-format">T</span>HH:MM:SS.SSS</strong> for timestamp.
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="results">
+        <mat-card>
+            <div class="header">Results</div>
+            <div *ngIf="rows.length > 0" class="table">
+                <table mat-table [dataSource]="rows" class="mat-elevation-z8">
+                    <ng-container matColumnDef="controller">
+                        <th mat-header-cell *matHeaderCellDef> Controller </th>
+                        <td mat-cell *matCellDef="let element"> {{element.controller}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="temperature">
+                        <th mat-header-cell *matHeaderCellDef> Temperature</th>
+                        <td mat-cell *matCellDef="let element"> {{element.temp}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="ec">
+                        <th mat-header-cell *matHeaderCellDef> EC </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ec}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="ph">
+                        <th mat-header-cell *matHeaderCellDef> pH </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ph}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="timestamp">
+                        <th mat-header-cell *matHeaderCellDef> Timestamp </th>
+                        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+            <div class="analytics" *ngIf="rows.length > 0">
+                <div class="analytics-header">
+                    {{analyticText}}
+                </div>
+                <div class="value">
+                    Temperature|{{tempValue}}<span class="time">{{tempTime}}</span>
+                </div>
+                <div class="value">
+                    EC|{{ecValue}}<span class="time">{{ecTime}}</span>
+                </div>
+                <div class="value">
+                    pH|{{phValue}}<span class="time">{{phTime}}</span>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

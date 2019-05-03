@@ -1,0 +1,134 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="sidenav">
+        <app-region (selectedRegion)="changeRegion($event)"></app-region>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+        <div class="app-chart-container">
+            <div class="header">Quality Parameters</div>
+            <div class="parameter-info">
+                <div class="ec">
+                    <div class="title">EC</div>
+                    <div class="divider">
+                        <hr>
+                    </div>
+                    <div class="info">
+                        EC or Electrical Conductivity of water is its ability to conduct an electric current. Salts or
+                        other chemicals that dissolve in water can break down into positively and negatively charged
+                        ions. These free ions in the water conduct electricity, so the water electrical conductivity
+                        depends on the concentration of ions. Salinity and total dissolved solids (TDS) are used to
+                        calculate the EC of water, which helps to indicate the water’s purity. The purer the water the
+                        lower the conductivity. To give a real-life example, distilled water is almost an insulator, but
+                        saltwater is a very efficient electrical conductor
+                    </div>
+                </div>
+                <div class="pH">
+                    <div class="title">pH</div>
+                    <div class="divider">
+                        <hr>
+                    </div>
+                    <div class="info">
+                        The pH value is a good indicator of whether water is hard or soft. The pH of pure water is 7. In
+                        general, water with a pH lower than 7 is considered acidic, and with a pH greater than 7 is
+                        considered basic. The normal range for pH in surface water systems is 6.5 to 8.5, and the pH
+                        range for groundwater systems is between 6 to 8.5. Alkalinity is a measure of the capacity of
+                        the water to resist a change in pH that would tend to make the water more acidic. The
+                        measurement of alkalinity and pH is needed to determine the corrosiveness of the water.
+                    </div>
+                </div>
+                <div class="temp">
+                    <div class="title">Temperature</div>
+                    <div class="divider">
+                        <hr>
+                    </div>
+                    <div class="info">
+                        Water temperature affects the growth and reproduction of living organisms. Many animals use
+                        temperature as a signal for when to reproduce and when to migrate. Generally, animals and plants
+                        grow faster at warmer temperatures, although all organisms have an upper temperature limit.
+                        Water temperature has a tremendous impact on water density. Differences in water temperature and
+                        density cause stratification.
+                    </div>
+                </div>
+            </div>
+            <div class="header">Quality Analysis</div>
+            <div class="description">
+                <mat-card class="analysis-info">
+                    <div class="data-info">
+                        <div class="week">Water quality parameters during {{timeSlabText}}{{timeStampText}}</div>
+                        <div class="location">{{selectedRegion}}</div>
+                        <div class="timestamp">Data fetched at {{currentTimeStamp}}</div>
+                        <div class="note">*Please use the menu option in toolbar to change location.</div>
+                    </div>
+                    <div class="granularity">
+                        <mat-form-field class="form-field">
+                            <mat-label>Granularity</mat-label>
+                            <mat-select [(value)]="selectedTimeSlab" (selectionChange)="changeTimeSlab()">
+                                <mat-option *ngFor="let timeslab of timeslabs" [value]="timeslab">
+                                    {{timeslab}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </mat-card>
+            </div>
+            <div class="app-chart-container-1">
+                <div class="chart-1-area">
+                    <mat-card>
+                        <div id="ec-chart"></div>
+                    </mat-card>
+                </div>
+                <div class="chart-2-area">
+                    <mat-card>
+                        <div class="current-values">
+                            <div class="recommendation">
+                                <div class="current-header">Current Values</div>
+                                <div class="recommendation-value">
+                                    <mat-chip-list>
+                                        <mat-chip class="recommendation-text">{{recommended}}</mat-chip>
+                                    </mat-chip-list>
+                                </div>
+                            </div>
+                            <div id="ph-chart"></div>
+                            <div>
+                                <div>EC</div>
+                                <div class="current-ec">{{currentEC}}</div>
+                            </div>
+                            <div>
+                                <div>Temperature</div>
+                                <div class="current-temp">{{currentTemperature}}</div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="app-chart-container-2">
+                <div class="chart-1-area">
+                    <mat-card>
+                        <div id="temp-chart"></div>
+                    </mat-card>
+                </div>
+                <div class="chart-2-area">
+                    <mat-card>
+                        <div class="standard-values">
+                            <div class="standard-header">Water Quality Standards</div>
+                            <div class="standard-chart-container">
+                                <div id="standard-chart-ec"></div>
+                                <div id="standard-chart-temp"></div>
+                                <div id="standard-chart-ph"></div>
+                            </div>
+                            <div class="legend">
+                                <div class="good"></div>
+                                <div class="ok"></div>
+                                <div class="bad"></div>
+                            </div>
+                            <div class="legend-desc">
+                                <div class="good-desc">Ideal</div>
+                                <div class="ok-desc">Consumable</div>
+                                <div class="bad-desc">Not Recommended</div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

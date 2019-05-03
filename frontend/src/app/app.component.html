@@ -1,0 +1,8 @@
+<div class="app-container">
+    <div class="app-header">
+        <app-toolbar (toggleValue)="toggle($event)" [hide]="isHide"></app-toolbar>
+    </div>
+    <div class="app-body">
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+</div>

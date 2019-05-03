@@ -1,0 +1,33 @@
+.sidenav-menu{
+    background: none;
+    border: none;
+    flex:0.5;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+mat-icon{
+    color: white;
+    font-size: 30px;
+}
+
+.toolbar-container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.header-logo{
+    flex:10;
+    font-family: 'Monoton', cursive;
+    color: white;
+    font-size: 22px;
+}
+
+.researcher-menu{
+    display: none;
+}
+
+.researcher-logo{
+    padding-left: 40px;
+}

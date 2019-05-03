@@ -1,0 +1,12 @@
+.app-container{
+    height: 100%;
+}
+.app-header{
+    height: 75px;
+    background: black;
+}
+
+.app-body{
+    height: calc(100% - 75px);
+    overflow: auto;
+}

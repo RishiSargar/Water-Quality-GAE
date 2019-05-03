@@ -1,0 +1,14 @@
+<mat-expansion-panel class="regions" [expanded]="1==1">
+  <mat-expansion-panel-header>
+    <mat-panel-title class="title">
+      Available Regions
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-list role="list">
+    <div class="items-container">
+      <mat-list-item *ngFor="let region of regions" class="items" (click)="changeRegion(region)"> 
+        {{region}}
+      </mat-list-item>
+    </div>
+  </mat-list>
+</mat-expansion-panel>

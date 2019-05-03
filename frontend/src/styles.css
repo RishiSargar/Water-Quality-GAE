@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html{
+    height: 100vh;
+    overflow: hidden;
+}
+
+body{
+    height: 100%;
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
+
+mat-sidenav-container{
+    height: 100%;
+}
+
+mat-sidenav{
+    width: 300px;
+}
+
+.mat-card{
+    padding: 32px !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
+
+.mat-expansion-panel-body{
+    padding: 0px !important;
+}
+
+.mat-list-item-content{
+    padding-left: 50px !important;
+}

@@ -1,0 +1,197 @@
+.app-chart-container-1, .app-chart-container-2{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.chart-1-area{
+    flex:2;
+    padding: 20px;
+}
+
+.chart-2-area{
+    flex: 1;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.sidenav{
+    background: #EDF6FF;
+}
+
+.sidenav-content{
+    background-color: #EDF6FF;
+    cursor: pointer;
+}
+
+.highcharts-button{
+    display: none !important;
+}
+
+#ec-chart, #temp-chart{
+    width: 800px;
+}
+
+#ph-chart{
+    width: 300px;
+    height: 200px;
+    padding-left: 30px;
+}
+
+.current-values, .standard-values{
+    height: 400px;
+}
+
+.description{
+    padding: 0px 0px 0px 40px;
+}
+
+.week{
+    font-size: 22px;
+}
+
+.location{
+    font-size: 16px;
+}
+
+.timestamp{
+    font-size: 10px;
+    color: gray;
+}
+
+.parameter-info{
+    display: flex;
+    margin: 40px;
+}
+
+.header{
+    margin: 40px;
+}
+
+.ec, .pH, .temp{
+    flex: 1;
+}
+
+.divider{
+    margin-top: 20px;
+    width: 150px;
+}
+
+.info{
+    text-align: justify;
+    padding-right: 100px;
+    font-size: 14px;
+    color: rgba(109, 110, 112, 0.7);
+}
+
+.title{
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.header{
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.analysis-info{
+    display: flex;
+    width: 1300px;
+    line-height: 24px;
+}
+
+.note{
+    font-size: 12px;
+}
+
+.current-ec, .current-temp{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-family: 'Black Ops One', cursive;
+    color: #89D2FE;
+}
+
+.standard-header{
+    font-weight: 600;
+}
+
+.data-info{
+    flex: 5;
+}
+
+.granularity{
+    flex: 1;
+}
+
+.form-field{
+    width: 250px;
+}
+
+#standard-chart-ec, #standard-chart-temp, #standard-chart-ph{
+    height: 115px;
+}
+
+.standard-chart-title{
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.legend{
+    display: flex;
+    margin-top: 10px;
+}
+
+.good{
+    height: 30px;
+    width: 50px;
+    background-color: #C7E6FF  ;
+}
+
+.ok{
+    height: 30px;
+    width: 50px;
+    background-color: #45BBFF;
+    margin-left: 100px;
+}
+
+.bad{
+    height: 30px;
+    width: 50px;
+    background-color: #5FA5FF;
+    margin-left: 100px;
+}
+
+.legend-desc{
+    display: flex;
+    margin-top: 12px;
+    font-size: 10px;
+}
+
+.ok-desc{
+    margin-left: 125px;
+}
+
+.bad-desc{
+    margin-left: 70px;
+}
+
+.recommendation{
+    display: flex;
+}
+
+.current-header{
+    font-weight: 600;
+    flex: 2;
+}
+
+.recommendation-value{
+    flex: 1;
+}
+
+.recommendation-text{
+    background-color:  #5FA5FF;
+    color: white;
+}

@@ -1,0 +1,84 @@
+.query-container{
+    display: flex;
+    background: #EDF6FF;
+    height: 100%;
+    overflow: hidden;
+}
+
+.filter{
+    flex: 1;
+    margin: 40px;
+}
+
+.results{
+    flex:2;
+    margin: 40px;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.controls{
+    display: flex;
+    flex-direction: column;
+}
+
+.controller-container, .regions-container, .timestamp-container, .analytics-container{
+    margin-bottom: 20px;
+}
+
+.form-field{
+    width: 350px;
+}
+
+.header{
+    font-size: 24px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.note{
+    font-size: 12px;
+    text-align: justify;
+}
+
+.submit{
+    background-color: #C2EBFF;
+}
+
+.button-container{
+    margin-bottom: 20px;
+}
+
+table{
+    width: 100%;
+}
+
+.table{
+    height: 500px;
+    overflow-y: auto;
+}
+
+.analytics-header{
+    margin-left: 25px;
+}
+
+.analytics{
+    display: flex;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: #C7E6FF ;
+}
+
+.value{
+    margin-left: 60px;
+    font-size: 12px;
+}
+
+.time{
+    font-size: 10px;
+    color: gray;
+}
+
+.caps-format{
+    font-size: 14px;
+}
