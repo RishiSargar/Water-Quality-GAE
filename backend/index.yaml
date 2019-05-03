@@ -1,0 +1,13 @@
+indexes:
+- kind: Data
+  properties:
+  - name: timestamp
+    direction: desc
+  - name: controller_id
+    direction: desc
+- kind: Data
+  properties:
+  - name: controller_id
+    direction: desc
+  - name: timestamp
+    direction: desc
